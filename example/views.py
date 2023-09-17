@@ -27,5 +27,5 @@ def ip_api(request):
 def tmp(request):
     filename = '/var/task/django/db/backends/sqlite3/_functions.py'
     with open(filename, mode='r') as f:
-        content = f.read()
+        content = f.read().replace('\n', '</br>')
     return HttpResponse(content)
