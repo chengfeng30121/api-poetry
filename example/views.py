@@ -18,3 +18,8 @@ def index(request):
 def ip(request):
     html = requests.get('https://ip.cn/').content.decode()
     return HttpResponse(html)
+
+def ip_api(request):
+    url = 'https://ip.cn/' + request.get_full_path()
+    response = requests.get(url).content.decode()
+    return HttpResponse(html)
