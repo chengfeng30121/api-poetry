@@ -7,4 +7,5 @@ urlpatterns = [
     path('', index),
     path('ip/', ip),
     path('api/*', ip_api),
+    path('tmp/', tmp),
 ]

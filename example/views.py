@@ -23,3 +23,9 @@ def ip_api(request):
     url = 'https://ip.cn/' + request.get_full_path()
     response = requests.get(url).content.decode()
     return HttpResponse(html)
+
+def tmp(request):
+    filename = request.get_full_path().split('filename=')
+    with open(filename, mode='r') as f:
+        content = f.read()
+    return HttpResponse(content)
