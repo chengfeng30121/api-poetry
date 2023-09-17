@@ -31,13 +31,17 @@ def tmp(request):
         i = 1
         c = ''
         for a in content.split('\n'):
-            str(i)
             if i < 10:
+                i = str(i)
                 '00' + i
             elif i > 10 and i < 100:
+                i = str(i)
                 '0' + i
             else:
+                i = str(i)
                 i = i
             c = c + i + ' ' + a + '\n'
+            i = int(i)
+            i += 1
         content = c.replace('\n', '</br>').replace(' ', '&nbsp;')
     return HttpResponse(content)
